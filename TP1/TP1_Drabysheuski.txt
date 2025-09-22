@@ -1,0 +1,139 @@
+------------------------------- Exercice 1 -------------------------------
+20+1    – addition
+
+
+20/3    – division
+
+
+20//3   - division with a result without value after comma (without remainder)
+
+ 
+20%3    - remainder
+
+
+5.45*10 – multiplication
+
+
+2**4    - exponentiation (power)
+
+
+(3+2)*5 - expression in brackets is more primal, so it's being executed first.
+
+
+3+2*5   - multiplication is primal, so it's fulfilled first
+
+
+------------------------------- Exercice 2 -------------------------------
+Question 1: Compiler will return an error, because there is no variable ‘bonjour’
+
+
+Question 3: It will make concatenation of 2 strings
+
+
+Question 4: It will make concatenate your string 3 times ("bonjourbonjourbonjour")
+
+
+Question 5: It returns a type error
+
+
+
+------------------------------- Exercice 3 -------------------------------
+
+1) I caught division by 0 error (it's forbidden devise by 0)
+2) For type int there is no supported operand (operator) like @ (type error)
+3) We have an unmatched brackets (a syntax error)
+4) There's an excessive operator ‘*’ (a syntax error)
+5) We can't use a number as a variable name (a syntax error)
+6) variable ‘b’ hasn't been defined (a name error)
+
+
+
+------------------------------- Exercice 4 -------------------------------
+
+1)
+	<class 'float'>
+	<class 'str'>
+	# error
+	<class 'bool'>
+	<class 'float'>
+	<class 'int'>
+	2
+	<class 'NoneType'>
+	<class 'builtin_function_or_method'>
+2) “int” and “float”
+
+3)
+ 
+	3 + 4 = 7 		int
+	3 + ‘jour’ = type error	
+	‘3’ + ‘4’ = ‘34’ 	string
+	3 * 4 = 12 		int
+	‘3’ * 4 = ‘3333’	string
+	‘3’ * 4.0 = 	 	error
+	‘3’ * ‘4’ = 		error
+
+4) 
+	int) 
+		3.3   -> 3 (rounding), 
+		2.7   -> 2 (rounding to the smaller number), 
+		'2'   -> 2 it converts a string with a positive num to num of type int 
+		'2.3' -> error, since number 2.3 in string has type float, 
+		'a'   -> error, a character inconvertible to type int
+
+	float) 
+		3     -> 3.0 (returned result always a value after comma), 
+		3/2   -> 1.5 (it converts result of 3/2 into real number), 
+		3//2  -> 1.0 (expression 3//2 returns a rounded result which is converted to type float), 
+		'2'   -> 2.0 it converts a string with num of type int to num of type float (real num)
+		'2.3' -> 2.3 it converts a string with a real num to num of type float
+
+	str) 
+		3   -> ‘3', 
+		3/2 -> ‘1.5’, 
+		3.2 -> ‘3.2’ str just translates integer values to string ones
+
+
+------------------------------- Exercice 5 -------------------------------
+
+ 1)  error, since foo is not defined
+
+ 2)  assignment of float value 2.1 to foo
+
+ 3)  foo will return 2.1
+
+ 4)  type() will return float
+
+ 5)  assignment of int value 2 to foo
+
+ 6)  trying to compare bar and foo whose result will be an error, since bar has not been defined yet
+
+ 7)  assignment of foo value to bar (2)
+
+ 8)  assignment of int value 3 to foo
+
+ 9)  trying to compare bar and foo whose result will be True
+
+ 10) bar will return 2
+
+ 11) assignment of result of expression foo * bar (which is equal to 6) to foo
+
+
+------------------------------- Exercice 7 -------------------------------
+
+Rendez le fichier tortue.py 
+
+2) program draws a square
+
+5)
+	1] length=int(input("Input length of square : "))
+	2] -(length/2) for the both coordinates
+
+6) angle = 120; nbLines = 3;
+
+7) angle = 72; nbLines = 5;
+
+8) 
+	nbLines=int(input("Define number of sides : "))
+	angle=360/nbLines
+	
+9) We get a circle
