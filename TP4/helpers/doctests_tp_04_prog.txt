@@ -1,0 +1,72 @@
+****************
+* Instructions *
+****************
+
+Conservez ce fichier de test dans le même répertoire que vos réponses au TP concerné.
+Pour les exécuter, ouvrez un terminal dans ce répertoire et lancez la commande:
+
+python3 -m doctest nom_de_ce_fichier
+
+Les tests qui ont échoué s'afficheront; si rien ne s'affiche, cela signifie 
+qu'aucun test n'a échoué.
+
+Assurez-vous que les noms et signatures de vos fonctions correspondent bien à 
+ceux des tests de ce fichier. Quand cela est possible, les tests sont 
+aléatoires; n'hésitez donc pas à les relancer plusieurs fois, ou à les modifier
+si cela vous aide à débugger vos fonctions.
+
+*********
+* Tests *
+*********
+
+>>> from exo3 import carre; from random import randrange; liste = [randrange(1000) for _ in range(1000)]
+>>> for e in liste:
+...     if e ** 2 != carre(e):
+...         print(str(e) + "² =", e ** 2, "mais carre renvoie", carre(e))
+...
+
+>>> from exo3 import liste_carres; from random import randrange; liste = [randrange(1000) for _ in range(15)]
+>>> if liste_carres(liste) != [e ** 2 for e in liste]:
+...     print("attendu:", [e ** 2 for e in liste])
+...     print("obtenu: ", liste_carres(liste))
+...
+
+>>> from exo3 import max_liste; import ast; import inspect
+>>> assert("max" not in (c.func.id for c in ast.walk(ast.parse(inspect.getsource(max_liste))) if isinstance(c, ast.Call))), "utilisation de max interdite"
+
+>>> from exo3 import singletons; from random import randrange; 
+>>> for _ in range(20):
+...     liste = singletons([randrange(10) for _ in range(15)])
+...     if set(map(liste.count, liste)) != {1}:
+...         print("erreur: il reste des doublons dans", liste)
+...
+
+>>> from exo3 import indice; from random import randrange; liste = [randrange(1000) for _ in range(100)]
+>>> for elem in range(1000):
+...     resultat = indice(liste, elem)
+...     if elem in liste:
+...         vraie_pos = liste.index(elem)
+...         if resultat != vraie_pos:
+...             print("attendu pour", elem, ":", vraie_pos)
+...             print("obtenu:", resultat)
+...     elif resultat != -1:
+...             print("attendu pour", elem, ": -1")
+...             print("obtenu:", resultat)
+...
+
+>>> from exo3 import nb_occurrences; from random import randrange; liste = [randrange(100) for _ in range(1000)]
+>>> for elem in liste:
+...     resultat = nb_occurrences(elem, liste)
+...     vrai_compte = liste.count(elem)
+...     if resultat != vrai_compte:
+...         print("attendu pour", elem, ":", vrai_compte)
+...         print("obtenu:", resultat)
+...
+
+>>> from exo3 import toutes_occurrences; from random import randrange; liste = [randrange(100) for _ in range(1000)]
+>>> resultat = sorted(toutes_occurrences(liste))
+>>> attendu = sorted(map(list, {k: liste.count(k) for k in liste}.items()))
+>>> if resultat != attendu:
+...     print("attendu:", attendu)
+...     print("obtenu: ", resultat)
+...
