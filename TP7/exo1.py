@@ -1,13 +1,5 @@
-import re
-
-# I'm aware that there is a built-in method len()
-# but I wanted to implement lenght counting like in C
-def ft_strlen(s: str) -> int:
-	ln = 0
-
-	for _ in s:
-		ln += 1
-	return ln	
+import re	
+from helpers.helpfuncs import is_alnum, ft_strlen
 
 def is_palindrome(s: str) -> bool:
     # if I was writing it on C
@@ -19,11 +11,6 @@ def is_palindrome(s: str) -> bool:
     return True
 	# a shorter way
 	# return s == s[::-1]
-
-def is_alnum(c: str) -> bool:
-	if (c >= '0' and c <= '9') or (c >= 'A' and c <= 'Z') or (c >= 'a' and c <= 'z'):
-		return True
-	return False
 
 def is_palindrome2(s: str) -> bool:
 	handled_string = ''
