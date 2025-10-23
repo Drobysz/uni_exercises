@@ -1,7 +1,5 @@
 from typing import Union
-
-def is_space(c: str) -> bool:
-	return c == ' ' or (c >= '\t' and c <= '\r')
+from helpfuncs import is_alnum
 
 def is_base_valid(bs: str) -> bool:
 	ln = len(bs)
@@ -9,7 +7,7 @@ def is_base_valid(bs: str) -> bool:
 	if ln < 2:
 		return False
 	for i, c in enumerate(bs):
-		if c == '+' or c == '-' or is_space(c):
+		if not is_alnum(c):
 			return False
 		j = i + 1
 		while j < ln:
