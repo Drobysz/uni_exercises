@@ -1,0 +1,46 @@
+****************
+* Instructions *
+****************
+
+Conservez ce fichier de test dans le même répertoire que vos réponses au TP concerné.
+Pour les exécuter, ouvrez un terminal dans ce répertoire et lancez la commande:
+
+python3 -m doctest nom_de_ce_fichier
+
+Les tests qui ont échoué s'afficheront; si rien ne s'affiche, cela signifie 
+qu'aucun test n'a échoué.
+
+Assurez-vous que les noms et signatures de vos fonctions correspondent bien à 
+ceux des tests de ce fichier. Quand cela est possible, les tests sont 
+aléatoires; n'hésitez donc pas à les relancer plusieurs fois, ou à les modifier
+si cela vous aide à débugger vos fonctions.
+
+*********
+* Tests *
+*********
+
+>>> from exo1 import somme_colonnes; from random import randrange;
+>>> for _ in range(100):
+...     mat = [ [randrange(11) for j in range(3)] for i in range(4)]
+...     attendu = list(map(sum, zip(*mat)))
+...     obtenu = somme_colonnes(mat)
+...     if attendu != obtenu:
+...         print("pour mat =", mat, ":")
+...         print("    attendu:", attendu)
+...         print("    obtenu: ", obtenu)
+
+
+>>> from exo1 import copie; from random import randrange;
+>>> for _ in range(100):
+...     m1 = [ [randrange(11) for j in range(3)] for i in range(4)]
+...     m2 = copie(m1)
+...     if m1 is m2 or all(l1 is l2 for l1, l2 in zip(m1, m2)):
+...         print("erreur: la copie ne fonctionne pas correctement pour", m1)
+
+>>> from exo1 import annule_diagonales; from random import randrange;
+>>> for _ in range(100):
+...     mat = [ [randrange(11) for j in range(4)] for i in range(4)]
+...     res = annule_diagonales(mat)
+...     if any(res[i][i] for i in range(len(res))):
+...         print("erreur: annule_diagonales ne fonctionne pas correctement pour", m1)
+...         print("obtenu:", res)
