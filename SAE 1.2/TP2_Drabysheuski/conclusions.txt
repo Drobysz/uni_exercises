@@ -1,0 +1,34 @@
+TRANSLATED WITH Yandex translate (rus->fr)
+
+# Exercise 1
+
+- D'un point de vue théorique: les deux fonctions ont la même complexité — O(n²).
+
+- En pratique, enumerate1 est plus rapide parce que
+la méthode .count () est implémenté
+au niveau C et s'exécute beaucoup
+plus efficacement qu'une boucle en Python.
+
+
+# Exercise 2
+
+sort_listA: O(n log n) - tri Python standard (Timsort)
+
+sort_listB: O(n log n) - réarrangement de toutes les données après chaque ajout
+
+sort_listC: O(n) - dans le pire des cas, vous devez passer presque toute la liste
+
+sort_listD: O(n) - trouver la position et déplacer les éléments restants
+
+* Théoriquement, C et D devraient être plus rapides (O(n) vs O (n log n)).
+Mais sur les petites données sort () (A, B) peut gagner parce qu'il est optimisé sur C.
+
+# Exercise 3
+
+remove_pairA: O(n²) - chaque suppression del déplace tous les éléments suivants, ce qui nécessite O(n) sur chaque suppression
+
+remove_pairB: O(n)  - un passage sans décalage
+
+remove_pairC: O(n)  - chaque opération del ne nécessite pas de décalage-supprimer “de la fin", sans permutations coûteuses
+
+* remove_pairA est la plus lente, car elle supprime les éléments au milieu de la liste et déplace le reste → O(n2) à chaque fois.
