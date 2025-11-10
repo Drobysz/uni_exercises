@@ -1,5 +1,5 @@
 from typing import Union
-from helpfuncs import is_alnum
+from .helpfuncs import is_alnum
 
 def is_base_valid(bs: str) -> bool:
 	ln = len(bs)
@@ -15,6 +15,13 @@ def is_base_valid(bs: str) -> bool:
 				return False
 			j += 1
 	return True
+
+def is_val_valid(val: str, bs: str) -> bool:
+    for c in val:
+        if c not in bs:
+            return False
+    return True
+     
 
 def id_in_base(c: str, bs: str) -> Union[int, None]:
     if c in bs:
@@ -61,9 +68,11 @@ def ft_convert_base(
     bs_to: str
 ) -> Union[str, None]:
 	if not is_base_valid(bs_from) or not is_base_valid(bs_to):
-		return None
+		raise AssertionError
 	if len(num) < 1:
-		return None
+		return ''
+	if not is_val_valid(num, bs_from):
+		raise AssertionError
 
 	converted = convert_to_decimal(num, bs_from)
 	out = convert_to_base(converted, bs_to)
