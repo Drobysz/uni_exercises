@@ -4,10 +4,10 @@ from models.apples import *
 from models.snake import *
 
 class Window: 
-	def __init__(self, case_size, width, nb_cases):	
+	def __init__(self, case_size, width):	
 		self.case_size: int = case_size
 		self.width: int = width
-		self.nb_cases: int = nb_cases
+		self.nb_cases: int = int(self.width / self.case_size)
 
 		assert (self.width % self.nb_cases == 0)
 		cree_fenetre(self.width, self.width)
