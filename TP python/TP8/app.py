@@ -15,7 +15,7 @@ def is_continued() -> bool:
 
 def play_one_game() -> game_state:
     window = Window(10, 600)
-    apples = Apples(30, window.nb_cases)
+    apples = Apples(30, int(sqrt(window.nb_cases)))
     snake = Snake(5)
     cs = window.case_size
 
