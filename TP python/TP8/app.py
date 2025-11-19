@@ -14,8 +14,8 @@ def is_continued() -> bool:
     return True 
 
 def play_one_game() -> game_state:
-    window = Window(10, 600, 40)
-    apples = Apples(8)
+    window = Window(10, 600)
+    apples = Apples(30, window.nb_cases)
     snake = Snake(5)
     cs = window.case_size
 
@@ -50,10 +50,10 @@ def main():
         state = play_one_game()
         if state == 'suspended':
             ferme_fenetre()
-            return
-        if not is_continued() and state == 'finished':
-            ferme_fenetre()
             break
+        if not is_continued() and state == 'finished':
+            break
+        ferme_fenetre()
 
 if __name__ == '__main__':
     main()
