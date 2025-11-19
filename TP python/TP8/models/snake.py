@@ -39,16 +39,17 @@ class Snake:
 		for i in range(s.ln):
 			view_case(s.body[i], 'green' if i < s.ln - 1 else 'blue', case_size)
  
-	def isEncountered(s, width, case_size):
+	def isEncountered(s, w, cs):
 		head = s.body[-1]
 		rest_of_body = s.body[:s.ln-1]
 		
 		if head in rest_of_body:
 			return True
-		x_px = head[0] * case_size
-		y_px = head[1] * case_size
 
-		if x_px < 0 or x_px >= width or y_px < 0 or y_px >= width:
+		x_px = head[0] * cs
+		y_px = head[1] * cs
+
+		if x_px < cs or x_px >= w - cs or y_px < cs or y_px >= w - cs:
 			return True
 		return False
 
