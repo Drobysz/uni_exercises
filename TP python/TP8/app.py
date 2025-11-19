@@ -3,6 +3,9 @@ from models.snake import *
 from models.apples import *
 from window import *
 from time import sleep
+from typing import Literal
+
+game_state = Literal['suspended', 'finished']
 
 def is_continued() -> bool:
     event = attend_ev()
@@ -10,7 +13,7 @@ def is_continued() -> bool:
         return False
     return True 
 
-def play_one_game():
+def play_one_game() -> game_state:
     window = Window(10, 600, 40)
     apples = Apples(8)
     snake = Snake(5)
@@ -30,25 +33,27 @@ def play_one_game():
             
             snake.change_dir(key)
             if key == 'Escape':
-                ferme_fenetre()
-                break
+                return 'suspended'
         
         if snake.isEncountered(window.width, cs):
             window.loss()
-            break
+            return 'finished'
         
         if apples.nb_apples == 0:
             window.win()
-            break
+            return 'finished'
 
         sleep(0.1)
 
 def main():
     while True:
-        play_one_game()
-        if not is_continued():
-            break 
-        ferme_fenetre()
+        state = play_one_game()
+        if state == 'suspended':
+            ferme_fenetre()
+            return
+        if not is_continued() and state == 'finished':
+            ferme_fenetre()
+            break
 
 if __name__ == '__main__':
     main()
