@@ -9,8 +9,7 @@ if __name__ == '__main__':
     # 1 + 2
     
     D = 400/n
-    x_shift = D/2
-    y_shift = D/2
+    x_shift = y_shift = D/2
     
     # for i in range(n):
     #     cercle(x_shift, y_shift, D/2, "red")
