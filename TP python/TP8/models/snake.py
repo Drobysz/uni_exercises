@@ -49,7 +49,7 @@ class Snake:
 		x_px = head[0] * cs
 		y_px = head[1] * cs
 
-		if x_px < 0 or x_px >= w or y_px < 0 or y_px >= w:
+		if x_px < 0 or x_px >= w - cs or y_px < 0 or y_px >= w - cs:
 			return True
 		return False
 
