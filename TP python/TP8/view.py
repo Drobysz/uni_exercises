@@ -1,7 +1,7 @@
 from fltk import *
 
 def view_case(cell, color, size):
-		b1, b2 = cell[0] * size, cell[1] * size
+		b1, b2 = (cell[0] * size) + size, (cell[1] * size) + size
 		e1, e2 = b1 + size, b2 + size,
 
 		rectangle(
