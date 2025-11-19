@@ -32,7 +32,7 @@
 
 # Window
 
-### Description: it's responsible for:
+### it's responsible for:
 - 1. rendering of all elements on tne map
 - 2. displaying of headers
 - 3. window and cases configuration
