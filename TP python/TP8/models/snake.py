@@ -61,10 +61,10 @@ class Snake:
 			if opposite[dir] != s.dir:
 				s.dir = dirs[key]    
 	def body_positive(s):
-		l_c: Coord = s.body[0]
-		n_c = define_cell_coordinates(l_c, s.dir)
-
-		s.body = [n_c] + s.body[:]
+		for _ in range(3):
+			l_c: Coord = s.body[0]
+			n_c = define_cell_coordinates(l_c, s.dir)
+			s.body = [n_c] + s.body[:]
 
 	def shift_snake(s):
 		for id in range(s.ln - 1):
