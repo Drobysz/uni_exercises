@@ -43,7 +43,7 @@ def play_one_game() -> game_state:
             window.win()
             return 'finished'
 
-        sleep(0.1)
+        sleep(0.05)
 
 def main():
     while True:
