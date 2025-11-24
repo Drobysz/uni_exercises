@@ -121,7 +121,7 @@ def max_dict(d: Dict) -> str:
             return key
 
 
-def unique_chars(s: str):
+def unique_chars(s: str) -> Dict:
     c_n = dict()
 
     for c in s:
