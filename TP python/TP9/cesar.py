@@ -138,6 +138,8 @@ def devine_cle2(texte_cache):
     23
     """
     most_repeated_char = max_dict(unique_chars(texte_cache))
+    # 97 - premier index dans ASCII de lettre lowercase d'alphabet
+    # methode lower() a été utilisé pour obtenir index de lettre lowercase dans ASCII tableau
     pos = ord(most_repeated_char.lower()) - 97 
     return int((pos + ord('a') - ord('e')) % 26)
 
