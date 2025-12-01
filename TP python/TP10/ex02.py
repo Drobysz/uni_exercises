@@ -76,10 +76,10 @@ def retire_mot(entree, sortie, mot: str):
 if __name__ == '__main__':
 	filename = 'LMCO.txt'
 
-	# affiche_fichier_un_mot_par_ligne(filename)
-	# affiche_derniere_lettre(filename)
-	# affiche_derniere_ligne(filename)
-	# ajoute_etoiles_fin(filename)
-	# ajoute_etoiles_debut(filename)
-	# retire_caracteres(filename, 'test.txt', [',', 'l', 'O', '.'])
+	affiche_fichier_un_mot_par_ligne(filename)
+	affiche_derniere_lettre(filename)
+	affiche_derniere_ligne(filename)
+	ajoute_etoiles_fin(filename)
+	ajoute_etoiles_debut(filename)
+	retire_caracteres(filename, 'test.txt', [',', 'l', 'O', '.'])
 	retire_mot(filename, 'test.txt',  'ah')
